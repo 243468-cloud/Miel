@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas de Stock</title>
+    <link rel="stylesheet" href="../css/admin-products.css">
+    <style>
+        body{font-family:Arial, sans-serif;background:#fff;margin:0}
+        .header{background:#f9f9f9;border-bottom:1px solid #eee}
+        .header-container{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+        .content{max-width:980px;margin:30px auto;padding:0 20px}
+        .chart-card{background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);padding:20px}
+        .chart-title{margin:0 0 10px 0;font-size:20px}
+        .chart-footer{margin-top:16px;color:#666;font-size:12px}
+        canvas{width:100%;height:420px}
+        table{width:100%;border-collapse:collapse;margin-top:18px}
+        th,td{border-bottom:1px solid #eee;padding:10px;text-align:left}
+        th{background:#fafafa}
+        .btn-back{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:none;border-radius:8px;background:#F9BD31;color:#000;font-weight:bold;cursor:pointer}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo"><a href="../index.html"><img src="../images/LOGO.png" alt="Logo" style="height:40px"></a></div>
+            <button class="btn-back" onclick="history.back()">← Volver</button>
+        </div>
+    </header>
+    <div class="content">
+        <div class="chart-card">
+            <h2 class="chart-title">Stock por producto</h2>
+            <canvas id="stockChart"></canvas>
+            <div id="tableContainer"></div>
+            <div class="chart-footer">Fuente: API productos `GET /api/charts/products-stock`</div>
+        </div>
+    </div>
+    <script type="module" src="../js/charts.js"></script>
+</body>
+</html>
